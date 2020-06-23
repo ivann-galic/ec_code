@@ -18,7 +18,7 @@
         <a class="item" href="index.php?media=<?= $media['id']; ?>">
             <div class="video">
                 <div>
-                    <iframe allowfullscreen="" frameborder="0"
+                    <iframe style='width:476px; height:268px' allowfullscreen="" frameborder="0"
                             src="<?= $media['trailer_url']; ?>" ></iframe>
                 </div>
             </div>
@@ -31,3 +31,4 @@
 <?php $content = ob_get_clean(); ?>
 
 <?php require('dashboard.php'); ?>
+<?php //require('../controller/MediaController.php'); ?>
