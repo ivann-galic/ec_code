@@ -9,7 +9,7 @@ require_once( 'model/media.php' );
 function mediaPage() {
 
     $search = isset($_GET['title']) ? $_GET['title'] : null;
-    if($search = null){
+    if($search == null){
         $medias = Media::displayAllMedias($search);
     }else{
         $medias = Media::filterMedias($search);
