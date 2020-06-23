@@ -20,5 +20,21 @@ function signupPage() {
 }
 
 /***************************
-* ----- SIGNUP FUNCTION -----
-***************************/
+ * ----- SIGNUP FUNCTION -----
+ **************************
+ * @throws Exception
+ */
+
+function signUp( $post ) {
+
+    $data           = new stdClass();
+    $data->email    = $post['email'];
+    $data->password = $post['password'];
+    $data->password_confirm = $post['password_confirm'];
+
+    $user = new User( $data );
+    $user->createUser();
+
+    require('view/auth/signupView.php');
+
+}
