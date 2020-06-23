@@ -25,11 +25,6 @@ function signupPage() {
 
 function signUp( $post ) {
 
-/*    $data           = new stdClass();
-    $data->email    = $post['email'];
-    $data->password = $post['password'];
-    $data->password_confirm = $post['password_confirm'];*/
-
     $user = new User();
     try {
         $user->setEmail($post['email']);

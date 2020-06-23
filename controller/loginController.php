@@ -33,7 +33,6 @@ function login( $post ) {
 
   $user           = new User( $data );
   $userData       = $user->getUserByEmail();
-
   $error_msg      = "Email ou mot de passe incorrect";
 
   if( $userData && sizeof( $userData ) != 0 ):
