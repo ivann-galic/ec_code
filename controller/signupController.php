@@ -21,19 +21,31 @@ function signupPage() {
 
 /***************************
  * ----- SIGNUP FUNCTION -----
- **************************
- * @throws Exception
- */
+ **************************/
 
 function signUp( $post ) {
 
-    $data           = new stdClass();
+/*    $data           = new stdClass();
     $data->email    = $post['email'];
     $data->password = $post['password'];
-    $data->password_confirm = $post['password_confirm'];
+    $data->password_confirm = $post['password_confirm'];*/
 
-    $user = new User( $data );
-    $user->createUser();
+    $user = new User();
+    try {
+        $user->setEmail($post['email']);
+    } catch (Exception $e) {
+        $error_msg = 'L\'email renseigné est incorrect';
+    }
+    try {
+        $user->setPassword($post['password'], $post['password_confirm']);
+    } catch (Exception $e) {
+        $error_msg = 'Vos mots de passes sont différents';
+    }
+    try {
+        $user->createUser();
+    } catch (Exception $e) {
+        $error_msg = 'Ce mail est déjà enregistré.';
+    }
 
     require('view/auth/signupView.php');
 
