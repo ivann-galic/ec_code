@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 'on');
+//ini_set('display_errors', 'on');
 require_once('controller/homeController.php');
 require_once('controller/loginController.php');
 require_once('controller/signupController.php');
