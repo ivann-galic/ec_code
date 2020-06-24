@@ -41,7 +41,7 @@ class User {
       throw new Exception( 'Vos mots de passes sont différents' );
     endif;
 
-    $this->password = sha1($password);
+    $this->password = hash("sha256",$password);
   }
 
   /***************************
