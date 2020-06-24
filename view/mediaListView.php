@@ -24,7 +24,10 @@
                                 src="<?= $media['trailer_url']; ?>" ></iframe>
                     </div>
                 </div>
-                <div class="title"><?= $media['title']; ?></div>
+                <div class="title">
+                    <p class="title_list"><?= $media['title']; ?></p>
+                    <p class="release_date_list"><?= $media['release_date']; ?></p>
+                </div>
             </a>
         <?php endforeach; ?>
     </div>
