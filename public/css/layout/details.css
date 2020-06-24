@@ -1,3 +1,9 @@
-.textTest {
-    color: red
+.media_title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.media_summary {
+    padding-right: 30px;
+    padding-left: 30px;
 }
