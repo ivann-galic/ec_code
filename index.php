@@ -1,10 +1,11 @@
 <?php
-
+ini_set('display_errors', 'on');
 require_once('controller/homeController.php');
 require_once('controller/loginController.php');
 require_once('controller/signupController.php');
 require_once('controller/mediaController.php');
 require_once('controller/detailsMediaController.php');
+require_once('controller/contactController.php');
 
 /**************************
  * ----- HANDLE ACTION -----
@@ -13,6 +14,12 @@ require_once('controller/detailsMediaController.php');
 if (isset($_GET['action'])):
 
     switch ($_GET['action']):
+
+        case 'contact':
+
+            contactPage();
+
+            break;
 
         case 'login':
 
@@ -37,7 +44,6 @@ if (isset($_GET['action'])):
             endif;
 
             break;
-
 
         case 'logout':
 

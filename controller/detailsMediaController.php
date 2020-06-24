@@ -15,3 +15,4 @@ function details() {
     require('view/details.php');
 }
 
+
