@@ -8,8 +8,9 @@ require_once( 'model/media.php' );
 
 function details() {
 
+    $id = htmlentities($_GET['media']);
     $db   = init_db();
-    $req = $db->query('SELECT * FROM media WHERE id = \'' . $_GET['media'] . '\';');
+    $req = $db->query('SELECT * FROM media AS me INNER JOIN genre ge On me.genre_id = ge.id WHERE me.id = \'' . $id . '\';');
     $db   = null;
     require('view/details.php');
 }
