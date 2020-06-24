@@ -38,11 +38,6 @@ if (isset($_GET['action'])):
 
             break;
 
-/*        case 'details':
-
-            details();
-
-            break;*/
 
         case 'logout':
 
