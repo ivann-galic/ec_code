@@ -36,6 +36,17 @@ function signUp( $post ) {
     } catch (Exception $e) {
         $error_msg = 'Vos mots de passes sont différents';
     }
+
+    $active = 0;
+    $user->setActive($active);
+
+    $key_size = 20;
+    $key = "";
+    for($i=1;$i<$key_size;$i++){
+        $key .= mt_rand(0,9);
+    }
+    $user->setConfirmkey($key);
+
     try {
         $user->createUser();
     } catch (Exception $e) {

@@ -6,6 +6,7 @@ require_once('controller/signupController.php');
 require_once('controller/mediaController.php');
 require_once('controller/detailsMediaController.php');
 require_once('controller/contactController.php');
+require_once('controller/confirmationController.php');
 
 /**************************
  * ----- HANDLE ACTION -----
@@ -58,7 +59,6 @@ else:
     $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
 
     if ($user_id):
-
         if ($_GET['media']) {
             details();
         } else {
@@ -66,6 +66,9 @@ else:
         }
 
     else:
+        if ($_GET['mail']) {
+            confirmationPage();
+        }
         homePage();
     endif;
 
