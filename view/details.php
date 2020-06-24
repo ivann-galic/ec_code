@@ -14,6 +14,13 @@
 
 
 <body>
+<?php
+
+include 'Outils.php';
+
+    $data = $req->fetch()
+
+    ?>
 <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
         <h2 class="title">Bienvenue</h2>
@@ -38,7 +45,7 @@
             </div>
         </div>
         <div class="content p-4">
-            <p class="textTest">test</p>
+            <p class="textTest">test: <?php echo $data['title'] ?></p>
         </div>
         <footer>Copyright Cod'Flix</footer>
     </div>
