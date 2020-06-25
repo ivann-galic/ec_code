@@ -17,7 +17,6 @@
     <div class="col-md-12 media-list">
         <?php foreach( $medias as $media ): ?>
             <a class="item" href="index.php?media=<?= $media['id']; ?>">
-<!--            <a class="item" href="index.php?action=details">-->
                 <div class="video">
                     <div>
                         <iframe style='width:476px; height:268px' allowfullscreen="" frameborder="0"

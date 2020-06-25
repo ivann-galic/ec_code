@@ -11,10 +11,13 @@
                     <p class="media_type"><?php echo $data['type'] ?> / <?php echo $data['name'] ?></p>
                     <p class="media_status"> <?php echo $data['status'] ?> le <?php echo $data['release_date'] ?></p>
                     <p class="media_summary col-md-10 offset-1 text-justify"> <?php echo $data['summary'] ?></p>
-                    <!--<p class="media_type"> <?php /*echo $data['type'] */?></p>-->
+                    <?php
+                        if($data['type'] == "Film") {
+                            echo '<a class="stream_link" href="index.php?stream='.$data['title'].'">Visionner le film</a>';
+                        }
+                        ?>
                 </div>
-<!--                --><?php /*if($data['type'] == "Série"):
-                        echo '<p>Saison</p>'*/?>
+
             </div>
 
 <?php $content = ob_get_clean(); ?>
