@@ -14,8 +14,10 @@
                     <p class="media_summary col-md-10 offset-1 text-justify"> <?php echo $data['summary'] ?></p>
                     <?php
                     if($data['type'] == "Film") {
+                        /* Displays the link to wtch the film: */
                         echo '<a class="stream_link text-danger" style="text-decoration: none;" href="index.php?stream='.$data['stream_url'].'"><h2>Visionner le film</h2></a>';
                     } elseif($data['type'] == "Série") {
+                        /* Displays the links to wtch the episodes */
                         echo '<h2>Episodes disponibles :</h2>';
                         foreach( $data_Series as $series ):?>
                             <a class="stream_link text-danger" style="text-decoration: none;" href="index.php?stream=<?php echo $series['episode_url'] ?>">

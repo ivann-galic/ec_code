@@ -15,7 +15,7 @@
 
 <div class="row">
     <div class="col-md-12 media-list">
-        <?php foreach( $medias as $media ): ?>
+        <?php foreach( $medias as $media ): /* Displays all the episodes of the serie */?>
             <a class="item" href="index.php?media=<?= $media['id']; ?>">
                 <div class="video">
                     <div>

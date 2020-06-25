@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 
     <?php
+    /* Gets the video url send by the page url to update the player : */
         $url= ($_GET['stream']);
     ?>
     <div class="row">

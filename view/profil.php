@@ -11,11 +11,11 @@
 
         <div class="modify_password_section col-sm-8 col-md-8 col-lg-6 col-xl-6 offset-2">
             <h2>Modifier votre mot de passe</h2>
-<!--            <p>--><?//= isset( $error_msg ) ? $error_msg : null; ?><!--</p>-->
             <form action="#" method="POST">
                 <div class="row">
                     <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
                         <?php
+                        /* Displays messages and errors when the user has validated the form to change his password: */
                         if(isset($_POST['change_password'])){
                             changePassword($profil['id']);
                         }
@@ -42,6 +42,7 @@
                 <div class="row">
                     <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
                         <?php
+                        /* Displays messages and errors when the user has validated the form to change his email: */
                         if(isset($_POST['change_email'])){
                             changeEmail($profil['id']);
                         }
@@ -60,6 +61,7 @@
                 <div class="row">
                     <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
                         <?php
+                        /* Displays messages and errors when the user has validated the form to delete his account: */
                         if(isset($_POST['delete_account'])){
                             deleteAccount($profil['id']);
                         }

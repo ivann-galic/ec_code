@@ -37,6 +37,7 @@
             </div>
 
             <span class="error-msg">
+<!--               Displays the error messages when the user validates the sign up form : -->
               <?= isset( $error_msg ) ? $error_msg : null; ?>
             </span>
           </form>

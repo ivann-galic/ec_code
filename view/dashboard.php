@@ -24,6 +24,7 @@
               <?php
               $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
               if($user_id):
+                  /* Displays the logout link only if the user is already connected : */
                   ?>
                   <li><a href="index.php?action=logout">Me déconnecter</a></li>
               <?php endif; ?>
@@ -43,6 +44,7 @@
           </div>
         </div>
         <div class="content p-4">
+<!--            Displays the differents pages :-->
           <?= $content; ?>
         </div>
         <footer>Copyright Cod'Flix</footer>
