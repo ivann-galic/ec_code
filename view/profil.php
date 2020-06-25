@@ -10,9 +10,15 @@
         </div>
         <div class="modify_password_section col-sm-8 col-md-8 col-lg-6 col-xl-6 offset-2">
             <h2>Modifier votre mot de passe</h2>
+<!--            <p>--><?//= isset( $error_msg ) ? $error_msg : null; ?><!--</p>-->
             <form action="#" method="POST">
                 <div class="row">
                     <div class="form-group col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        <?php
+                        if(isset($_POST['change_password'])){
+                            changePassword($profil['id']);
+                        }
+                        ?>
                         <label for="input_name">Veuillez saisir votre mot de passe actuel :</label>
                         <input type="text" name="current_password" class="form-control" id="input_current_password" required>
                     </div>
@@ -25,11 +31,6 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" name="change_password">Valider</button>
-                <?php
-                if(isset($_POST['change_password'])){
-                    changePassword($profil['id']);
-                }
-                ?>
             </form>
         </div>
         <div class="modify_mail_section col-sm-8 col-md-8 col-lg-6 col-xl-6 offset-2">
