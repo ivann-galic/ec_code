@@ -1,3 +1,7 @@
+.body_current {
+    margin-bottom: 100px;
+}
+
 .title_profile_section h1 {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -9,6 +13,7 @@
 
 .modify_mail_section h2 {
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .your_mail {
