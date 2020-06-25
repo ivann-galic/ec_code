@@ -139,4 +139,36 @@ class Media
 
     }
 
+    public static function filterGenre($genre)
+    {
+
+        // Open database connection
+        $db = init_db();
+
+        $req = $db->prepare("SELECT * FROM media WHERE genre_id = ?");
+        $req->execute(array($genre));
+
+        // Close databse connection
+        $db = null;
+
+        return $req->fetchAll();
+
+    }
+
+    public static function filterType($type)
+    {
+
+        // Open database connection
+        $db = init_db();
+
+        $req = $db->prepare("SELECT * FROM media WHERE type = ?");
+        $req->execute(array($type));
+
+        // Close databse connection
+        $db = null;
+
+        return $req->fetchAll();
+
+    }
+
 }

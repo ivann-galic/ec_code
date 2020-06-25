@@ -1,7 +1,15 @@
 <?php ob_start(); ?>
 
 <div class="row">
-    <div class="col-md-4 offset-md-8">
+    <div class="col-md-5 offset-md-3 text-right">
+    <a href="index.php?all"><button type="button" class="btn btn-outline-dark">Tout afficher</button></a>
+    <a href="index.php?type=Film"><button type="button" class="btn btn-outline-success">Film</button></a>
+    <a href="index.php?type=Série"><button type="button" class="btn btn-outline-success">Série</button></a>
+    <a href="index.php?genre=1"><button type="button" class="btn btn-outline-info">Action</button></a>
+    <a href="index.php?genre=2"><button type="button" class="btn btn-outline-info">Horreur</button></a>
+    <a href="index.php?genre=3"><button type="button" class="btn btn-outline-info">Science-Fiction</button></a>
+    </div>
+    <div class="col-md-4">
         <form method="get">
             <div class="form-group has-btn">
                 <input type="search" id="search" name="title" value="<?= $search; ?>" class="form-control"
