@@ -136,7 +136,6 @@ class User
         $headers.= 'Content-Type: text/html; charset="utf-8"'."\n";
         $headers.= "FROM: donotreply@codflix.com";
         $headers.= 'Content-Transfer-Encoding: 8bit';
-
         mail($user_mail, 'Confirmation de compte', $message_confirm, $headers);
         // Close databse connection
         $db = null;

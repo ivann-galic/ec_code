@@ -1,3 +1,7 @@
+.body_current {
+    margin-bottom: 100px;
+}
+
 .media_title {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -7,4 +11,9 @@
     padding-right: 30px;
     padding-left: 30px;
     margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.media_infos h2 {
+    margin-bottom: 30px;
 }
