@@ -55,6 +55,7 @@ function signUp($post)
 
     try {
         $user->createUser();
+        $error_msg = 'Vous avez bien été inscrit !';
     } catch (Exception $e) {
         /*    Verifies if the email is already present in the database */
         $error_msg = 'Ce mail est déjà enregistré.';
