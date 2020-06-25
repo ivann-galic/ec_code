@@ -1,0 +1,1 @@
+Pour information TP RECO : Ni AJAX ni BOOTSTRAP n'ont été vu en cours. Idem pour l'utisisation d'une base de données en PHP.
