@@ -7,6 +7,7 @@ require_once('controller/mediaController.php');
 require_once('controller/detailsMediaController.php');
 require_once('controller/contactController.php');
 require_once('controller/confirmationController.php');
+require_once('controller/streamController.php');
 
 /**************************
  * ----- HANDLE ACTION -----
@@ -61,6 +62,8 @@ else:
     if ($user_id):
         if ($_GET['media']) {
             details();
+        } elseif ($_GET['stream']) {
+            stream();
         } else {
             mediaPage();
         }

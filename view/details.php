@@ -10,12 +10,12 @@
                     <h1 class="media_title"><?php echo $data['title'] ?></h1>
                     <p class="media_type"><?php echo $data['type'] ?> / <?php echo $data['name'] ?></p>
                     <p class="media_status"> <?php echo $data['status'] ?> le <?php echo $data['release_date'] ?></p>
-                    <p class="media_summary col-md-10 offset-1 text-justify"> <?php echo $data['summary'] ?></p>
                     <?php
-                        if($data['type'] == "Film") {
-                            echo '<a class="stream_link" href="index.php?stream='.$data['title'].'">Visionner le film</a>';
-                        }
-                        ?>
+                    if($data['type'] == "Film") {
+                        echo '<a class="stream_link text-danger" style="text-decoration: none;" href="index.php?stream='.$data['stream_url'].'"><h2>Visionner le film</h2></a>';
+                    }
+                    ?>
+                    <p class="media_summary col-md-10 offset-1 text-justify"> <?php echo $data['summary'] ?></p>
                 </div>
 
             </div>

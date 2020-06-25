@@ -1,117 +1,142 @@
 <?php
 
-require_once( 'database.php' );
+require_once('database.php');
 
-class Media {
+class Media
+{
 
-  protected $id;
-  protected $genre_id;
-  protected $title;
-  protected $type;
-  protected $status;
-  protected $release_date;
-  protected $summary;
-  protected $trailer_url;
+    protected $id;
+    protected $genre_id;
+    protected $title;
+    protected $type;
+    protected $status;
+    protected $release_date;
+    protected $summary;
+    protected $trailer_url;
+    protected $stream_url;
 
-  public function __construct( $media ) {
 
-    $this->setId( isset( $media->id ) ? $media->id : null );
-    $this->setGenreId( $media->genre_id );
-    $this->setTitle( $media->title );
-  }
+    public function __construct($media)
+    {
 
-  /***************************
-  * -------- SETTERS ---------
-  ***************************/
+        $this->setId(isset($media->id) ? $media->id : null);
+        $this->setGenreId($media->genre_id);
+        $this->setTitle($media->title);
+    }
 
-  public function setId( $id ) {
-    $this->id = $id;
-  }
+    /***************************
+     * -------- SETTERS ---------
+     ***************************/
 
-  public function setGenreId( $genre_id ) {
-    $this->genre_id = $genre_id;
-  }
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
-  public function setTitle( $title ) {
-    $this->title = $title;
-  }
+    public function setGenreId($genre_id)
+    {
+        $this->genre_id = $genre_id;
+    }
 
-  public function setType( $type ) {
-    $this->type = $type;
-  }
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
-  public function setStatus( $status ) {
-    $this->status = $status;
-  }
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
 
-  public function setReleaseDate( $release_date ) {
-    $this->release_date = $release_date;
-  }
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
 
-  /***************************
-  * -------- GETTERS ---------
-  ***************************/
+    public function setReleaseDate($release_date)
+    {
+        $this->release_date = $release_date;
+    }
 
-  public function getId() {
-    return $this->id;
-  }
+    /***************************
+     * -------- GETTERS ---------
+     ***************************/
 
-  public function getGenreId() {
-    return $this->genre_id;
-  }
+    public function getId()
+    {
+        return $this->id;
+    }
 
-  public function getTitle() {
-    return $this->title;
-  }
+    public function getGenreId()
+    {
+        return $this->genre_id;
+    }
 
-  public function getType() {
-    return $this->type;
-  }
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-  public function getStatus() {
-    return $this->status;
-  }
+    public function getType()
+    {
+        return $this->type;
+    }
 
-  public function getReleaseDate() {
-    return $this->release_date;
-  }
+    public function getStatus()
+    {
+        return $this->status;
+    }
 
-  public function getSummary() {
-    return $this->summary;
-  }
+    public function getReleaseDate()
+    {
+        return $this->release_date;
+    }
 
-  public function getTrailerUrl() {
-    return $this->trailer_url;
-  }
+    public function getSummary()
+    {
+        return $this->summary;
+    }
 
-  /***************************
-  * -------- GET LIST --------
-  ***************************/
+    public function getTrailerUrl()
+    {
+        return $this->trailer_url;
+    }
 
-  public static function displayAllMedias($title ) {
+    public function getStreamUrl()
+    {
+        return $this->stream_url;
+    }
 
-    $db = init_db();
-    $req = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
-    $req->execute(array($title));
+    /***************************
+     * -------- GET LIST --------
+     ***************************/
 
-    $db = null;
-    return $req->fetchAll();
+    public static function displayAllMedias($title)
+    {
 
-  }
+        $db = init_db();
+        $req = $db->prepare("SELECT * FROM media ORDER BY release_date DESC");
+        $req->execute(array($title));
 
-  public static function filterMedias( $title ) {
+        $db = null;
+        return $req->fetchAll();
 
-    // Open database connection
-    $db   = init_db();
+    }
 
-      $req  = $db->prepare( "SELECT * FROM media WHERE title LIKE '%$title%' ORDER BY release_date DESC" );
-      $req->execute( array( $title ));
+    public static function filterMedias($title)
+    {
 
-    // Close databse connection
-    $db   = null;
+        // Open database connection
+        $db = init_db();
 
-    return $req->fetchAll();
+        $req = $db->prepare("SELECT * FROM media WHERE title LIKE '%$title%' ORDER BY release_date DESC");
+        $req->execute(array($title));
 
-  }
+        // Close databse connection
+        $db = null;
+
+        return $req->fetchAll();
+
+    }
 
 }
