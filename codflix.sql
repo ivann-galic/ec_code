@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 25, 2020 at 03:55 PM
+-- Generation Time: Jun 25, 2020 at 06:39 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -199,7 +199,7 @@ ALTER TABLE `series`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- Constraints for dumped tables
