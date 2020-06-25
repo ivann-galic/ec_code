@@ -8,6 +8,7 @@ require_once('controller/detailsMediaController.php');
 require_once('controller/contactController.php');
 require_once('controller/confirmationController.php');
 require_once('controller/streamController.php');
+require_once('controller/profilController.php');
 
 /**************************
  * ----- HANDLE ACTION -----
@@ -41,6 +42,16 @@ if (isset($_GET['action'])):
             $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
             if ($user_id):
                 mediaPage();
+            else:
+                homePage();
+            endif;
+
+            break;
+
+        case 'profil':
+            $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
+            if ($user_id):
+                profilPage($user_id);
             else:
                 homePage();
             endif;

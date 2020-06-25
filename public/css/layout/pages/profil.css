@@ -1,0 +1,24 @@
+.title_profile_section h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.modify_password_section h2 {
+    margin-bottom: 20px;
+}
+
+.modify_mail_section h2 {
+    margin-bottom: 20px;
+}
+
+.your_mail {
+    font-weight: bold;
+}
+
+.modify_mail_section {
+    margin-top: 20px;
+}
+
+#input_current_password {
+    margin-bottom: 10px;
+}
